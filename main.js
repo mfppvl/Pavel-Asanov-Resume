@@ -34,9 +34,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
         if (check in myData) {
             document.getElementById('response').innerHTML += `<p>C:\\>${datainput.value}</p>` + respond
-        } else if (datainput.value === cls) {
+        } else if (check === cls) {
             document.getElementById('response').innerHTML = `<p></p>`
-        } else if (datainput.value === date) {
+        } else if (check === date) {
             document.getElementById('response').innerHTML += `<p>${dt}</p>`
         } else if (datainput.value === ip || datainput.value === address) {
             $.getJSON('https://json.geoiplookup.io/?callback=?', function(data) {

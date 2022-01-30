@@ -2,6 +2,11 @@ body {background-color: #000000;
     font-family: consolas;
     font-size: 16.5px;
     }
+#fmaindiv {
+    padding: 20px;
+    }
+
+
 
 button {
     display: block;
