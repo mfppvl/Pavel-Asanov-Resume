@@ -1,0 +1,83 @@
+body {background-color: #000000;
+    font-family: consolas;
+    font-size: 16.5px;
+    }
+
+button {
+    display: block;
+    margin-top: 10px;
+    font-family: consolas;
+    font-size: 16.5px;
+    }
+p {
+    color: #FFFFFF;
+    font-family: consolas;
+    font-size: 16.5px;
+  }
+
+.no-outline:focus {
+    outline: none;
+    font-family: consolas;
+    font-size: 16.5px;
+  }
+
+.dark {
+    font-family: consolas;
+    font-size: 16.5px;
+    }
+
+label {
+    color: #FFFFFF;
+    font-family: consolas;
+    font-size: 16.5px;
+    }
+
+input {
+    color: #FFFFFF;
+    font-family: consolas;
+    font-size: 16.5px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    background-color: #000000;
+  }
+
+  a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  td {
+    color: #FFFFFF;
+    font-family: consolas;
+    font-size: 16.5px;
+    text-align: left;
+
+  }
+  pre {
+    background: #000;
+    color: white;
+    font-family: monospace;
+    padding: 1ch;
+  }
+  
