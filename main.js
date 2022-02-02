@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function(){
             response.innerHTML += `<p class="dark">C:\\></p>`
         } else {
             response.innerHTML += `<p class="dark">C:\\>${datainput.value}</p><p>'${datainput.value}' is not recognized as an internal or external command,
-            operable program or batch file.</p>`
+            operable program or batch file. Hint: Help.</p>`
         }
             event.preventDefault()
             event.currentTarget.value = "" /* clears input text */
