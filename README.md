@@ -3,7 +3,7 @@
  * README
  * Jan 30, 2022 14:14 
  * Copyright (c) 2022 Pavel Asanov
- * https://www.pasanov.com
+ * https://pasanov.com
  *========================================================================
  *    This file is part of Pavel Asanov Resume.
  *
