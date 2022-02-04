@@ -37,7 +37,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
         if (check in myData) {
             document.getElementById('response').innerHTML += `<p>C:\\>${datainput.value}</p>` + respond;
-            window.scrollBy(0, window.innerHeight);
+            if (window.outerWidth && window.outerWidth > 480) {
+                window.scrollBy(0, window.innerHeight);
+            }
+            
         } else if (check === cls) {
             document.getElementById('response').innerHTML = `<p></p>`
         } else if (check === date) {
@@ -49,15 +52,24 @@ document.addEventListener('DOMContentLoaded', function(){
             $.getJSON('https://json.geoiplookup.io/?callback=?', function(data) {
                 document.getElementById('response').innerHTML += `<p><b>Congratulations you disovered easter egg!</b></p><p>${(JSON.stringify(data, null, 2)
                 )} ,/p>`;
-                window.scrollBy(0, window.innerHeight);
+                if (window.outerWidth && window.outerWidth > 480) {
+                    window.scrollBy(0, window.innerHeight);
+                }
+                
             })
         } else if ((datainput.value === empty)) {
             response.innerHTML += `<p class="dark">C:\\></p>`
-            window.scrollBy(0, window.innerHeight);
+            if (window.outerWidth && window.outerWidth > 480) {
+                window.scrollBy(0, window.innerHeight);
+            }
+            
         } else {
             response.innerHTML += `<p class="dark">C:\\>${datainput.value}</p><p>'${datainput.value}' is not recognized as an internal or external command,
             operable program or batch file. Hint: Help.</p>`
-            window.scrollBy(0, window.innerHeight);
+            if (window.outerWidth && window.outerWidth > 480) {
+                window.scrollBy(0, window.innerHeight);
+            }
+            
         }
             event.preventDefault()
             event.currentTarget.value = "" /* clears input text */
