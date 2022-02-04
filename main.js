@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-    var datainput = document.getElementById(`request-input`)
+    var datainput = document.getElementById(`request-input`)    
         $("#request-input").on('keydown', function(event){
         if (event.keyCode === 13) {
 
@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
             help: '<table> <tr> <td>CERTIFICATIONS </td>  <td>&emsp; Displays list of certifications and licenses.</td> </tr> <tr> <td>CLS</td> <td>&emsp; Clears the screen.</td> </tr> <tr> <td>CONTACT </td>  <td>&emsp; Displays a contact information.</td> </tr> <tr> <td>DATE </td>  <td>&emsp; Displays today`s date.</td> </tr> <tr> <td>DIR </td>  <td>&emsp; Displays a list of files and subdirectories in a directory.</td> </tr> <tr> <td>EDUCATION </td>  <td>&emsp; Displays educational experience.</td> </tr> <tr> <td>EXPERIENCE </td>  <td>&emsp; Displays professional experience.</td> </tr> <tr> <td>EXPERTISE</td> <td>&emsp; Displays key areas of expertise and expirience.</td> </tr> <tr> <td>HELP</td>   <td>&emsp; Provides Help information for OS commands.</td> </tr>    <tr> <td>NAME</td> <td>&emsp; Displays name. </td></tr> <tr> <td>LANGUAGES </td><td>&emsp; Displays language proficiency levels.</td></tr> <tr> <td>PRINT </td>  <td>&emsp; Prints a text.</td> </tr> <tr> <td>PROJECTS </td>  <td>&emsp; Displays noteble projects.</td> </tr> <tr> <td>PUBLICATIONS </td>  <td>&emsp; Displays list of contributions to scholarly publishings.</td> </tr> <tr> <td>SKILLS </td>  <td>&emsp; Displays some of the skills.</td> </tr> <tr> <td>SUMMARY </td>  <td>&emsp; Displays professional highlights.</td> </tr> <tr> <td>VER </td>  <td>&emsp; Displays a release version number.</td> </tr> <tr> <td>VOLUNTEER </td>  <td>&emsp; Displays volunteer experience. </td> </tr> <tr> <td> </td>  <td>&emsp; </td>   </tr  </table>',
             contact: '<p>How to contact me => <a href="https://www.linkedin.com/in/pavelasanov/" target="_blank">LinkedIn</a></p>',
-            ver: '<p>Pavel Asanov resume version 1.0</p>',  
-            resume: '<p>Pavel Asanov resume</p>',
+            ver: '<p>Pavel Asanov resume version 1.1</p>',  
+            resume: '<p>Warning Spoiler Alert <a href="pavel-asanov-resume.html">Full Resume</a></p></p>',
             dir: '<table> <tr> <td>index.html </td>  <td>&emsp; </td> </tr> <tr> <td>main.js </td>  <td>&emsp; </td> </tr> <tr> <td>stlyle.css </td>  <td>&emsp; </td> </tr> <tr> <td> </td>  <td>&emsp; </td> </tr> </table>',
             chkdsk: '<p><b>Congratulations you disovered easter egg!</b></p> <p> Access Denied as you do not have sufficient privileges or the disk may be locked by another process. You have to invoke this utility running in elevated mode and make sure the disk is unlocked.</p>',
         };
@@ -36,23 +36,28 @@ document.addEventListener('DOMContentLoaded', function(){
         var respond = myData[check]            
 
         if (check in myData) {
-            document.getElementById('response').innerHTML += `<p>C:\\>${datainput.value}</p>` + respond
+            document.getElementById('response').innerHTML += `<p>C:\\>${datainput.value}</p>` + respond;
+            window.scrollBy(0, window.innerHeight);
         } else if (check === cls) {
             document.getElementById('response').innerHTML = `<p></p>`
         } else if (check === date) {
             document.getElementById('response').innerHTML += `<p>${dt}</p>`
+            window.scrollBy(0, window.innerHeight);
         } else if (check === print) {
             window.print()
         } else if (datainput.value === ip || datainput.value === address) {
             $.getJSON('https://json.geoiplookup.io/?callback=?', function(data) {
                 document.getElementById('response').innerHTML += `<p><b>Congratulations you disovered easter egg!</b></p><p>${(JSON.stringify(data, null, 2)
                 )} ,/p>`;
+                window.scrollBy(0, window.innerHeight);
             })
         } else if ((datainput.value === empty)) {
             response.innerHTML += `<p class="dark">C:\\></p>`
+            window.scrollBy(0, window.innerHeight);
         } else {
             response.innerHTML += `<p class="dark">C:\\>${datainput.value}</p><p>'${datainput.value}' is not recognized as an internal or external command,
             operable program or batch file. Hint: Help.</p>`
+            window.scrollBy(0, window.innerHeight);
         }
             event.preventDefault()
             event.currentTarget.value = "" /* clears input text */
