@@ -1,435 +1,83 @@
-const SIZES = [
-  "42GB",
-  "60GB",
-  "120GB",
-  "250GB",
-  "500GB",
-  "1TB"
-];
+document.addEventListener('DOMContentLoaded', function(){
+    var datainput = document.getElementById(`request-input`)    
+        $("#request-input").on('keydown', function(event){
+        if (event.keyCode === 13) {
 
-const DISKS = [
-  "WDC WD1603821JS-84WAA8",
-  "SAMSUNG SP2504C VT100-33",
-  "ExcelStor Technology J880 PF20A21B",
-  "ExcelStor Technology J9250S GM20A52A",
-  "WDC WD3200AAJS-00RYA0 12.01B",
-  "ST9500325AS 0002SDM1",
-  "MAXTOR 6Y060M0 SN0874",
-  "WDC WD800JB-00FMA0"
-];
+        var cls = 'cls'
+        var date = 'date'
+        var ip = 'ip'
+        var address = 'address'
+        var print = 'print'
+        var empty = ''
+        var dt = new Date()
+        var text = datainput.value
+        var check = text.toLowerCase()    
+        var myData = { 
+            name: '<p>Pavel Asanov</p>', 
+            expertise: '<p><b>Operations Management, Project Management, Strategic Planning, Startups</b></p>', 
+            summary:'<p>Executive leader with expertise in all facets of product development, strategic analyses, financial management, and project management. My career in business leadership allowed me to develop skills in collaborating with all organization members to achieve business and financial objectives. Thanks to my skills and passion for achieving success, I have been instrumental in streamlining and improving processes, enhancing productivity, and implementing technology solutions.</p>', 
+            skills:'<p>Business partnerships, Project management, Product management, Strategic planning & analysis, Strategic partnerships, Global team management, New business development, Go-to-market strategies, Strategic product roadmaps, Product vision development, Process improvements, Blockchain, Ethereum, Startups & lean canvas, Electrical engineering, Peer mentorship, Strategy development, Research, Public Speaking</p>',
+            experience: '<p><b>Excel Security Corp, Director Of Business Operations</b>, New York, NY 	2020-Present </p> <p>* Reorganized management of security installation division team. Increased operational efficiency 50+%.</p> <p>* Coached and provided on-the-job training to the security division. Brought all team members up to industry standards.</p> <p>* Collaborated with senior executives across the organization to build an integrated system for the product, marketing, sales operations, client installation and service and support, pricing, and contracts.</p> <p><b>Finta Inc, Chief Operating Officer</b>, New York, NY, 2018-2020 </p> <p>* Developed operational, strategic plan and collaborated with c-suite leadership on agile go-to-market strategies to ensure accelerated market penetration and product adoption.</p> <p>* Led overall operational direction, administrative functions, and cost efficiency for internal day-to-day business operations. </p> <p>* Solved complex product and project management challenges during launch of a disruptive equity management platform in the FinTech industry. </p> <p>* Wrote source code for managing a capitalization table on an Ethereum main net.</p> <p>* Navigated regulations to secure SEC Transfer Agent approval. </p> <p><b>SOUND FACETS LLC, Managing Partner</b>, New York, NY	2004-2018</p>  <p>*	Co-founded and grew a security services company from scratch to 2,000+ recurring customers and $2+M in yearly revenue. </p> <p></p> <p>* Negotiated business partnerships with industry leaders, including: ADI, Alarm.com & Telguard.</p> <p>*	Oversaw project management portfolio for commercial and residential security systems</p> <p>* Created strategic initiatives arm focused on improving profitability and team productivity. </p> <p>* Strengthened internal business operations, business development, and project management best practices to reduce costs by 10% per year.  </p>' ,
+            education: '<p><b>Global Master of Business Administration</b>, Macquarie Graduate School of Management, 2023</p> <p><b>Engineering in Electrical Electronics and Communication</b>, Tashkent College of Informatics & Computer Engineering, 1997</p> ' ,
+            certifications: '<p><b>Project Management Professional (PMP)</b>, Project Management Institute </p> <p><b>ITIL Foundation Level</b>, AXELOS Global Best Practice</p> <p><b>Venture Deals</b>, Kauffman Fellows & TechStars</p> <p><b>Disney`s Approach to Creativity and Innovation</b>, Disney Institute </p> <p><b>Disney`s Approach to Leadership Excellence</b>, Disney Institute</p> <p><b>Disney`s Approach to Quality Service</b>, Disney Institute</p>',
+            volunteer:'<p><b>The Founder Institute, Mentor</b>, New York, NY, 2012-Present</p> <p>* Providing training sessions semester for startup founders.</p> <p>* Worked side-by-side with new startup founders. Taught best practices in scaling new ventures, developing market entries strategies and dynamic pricing models for a sustainable business. Shared feedback with participants weekly. </p> <p>* Helped to launch over 200 companies.</p> <p><b>Macquarie University Incubator, Mentor</b>,New South Wales, Australia	2021-Present</p> <p>* Product development training sessions.</p> <p>* One-on-one mentoring startup founders.</p>',
+            publications: '<p>Connecting through Kinect: A Participatory Approach to Designing a Collaborative Emotion Recognition Game with and for Autistic Individuals May 11, 2018 International Society for Autism Research <a href="https://insar.confex.com/insar/2018/webprogram/Paper28546.html" target="_blank">insar.confex.com</a></p> <p>Connecting Through Kinect: Designing and Evaluating a Collaborative Game with and for Autistic Individuals Feb 2017  <a href="https://www.researchgate.net/publication/313572238_Connecting_Through_Kinect_Designing_and_Evaluating_a_Collaborative_Game_with_and_for_Autistic_Individuals" target="_blank">researchgate.net</a></p>',
+            projects: '<p>Autism Research with Microsoft Kinect V2 A research study conducted by Dr. Kristen Gillespie-Lynch, from the Psychology Department at the College of Staten Island, CUNY Feb 2015 - May 2018.</p> <p>Advanced Coma Patient Monitoring System with Kinect V2 integration Designed and Developed at Kinect V2 Hackathon Austin, Texas. 2nd place winner February, 2015.</p>',
+            languages: '<p>Native fluency in <b>English</b> and <b>Russian</b>. Elementary proficiency in <b>Japanese</b>.</p>',
 
-const DEVICES = [
-  `HL-DT-ST GCE-8526B 1.04`,
-  `HL-DT-ST DVDRAM GSA-H10A JL02`,
-  "OPTIARC DVD RW AD-7173A 1-01",
-  "SLIMTYPE DVD A DS8A3S HA28",
-  "HL-DT-ST DVDRAM GH22LS50 TL02",
-  "TSSTCORP CDDVDW SH-S202G SB00",
-  "LITE-ON DVD SOHD-16P9S FS09"
-];
+            help: '<table> <tr> <td>CERTIFICATIONS </td>  <td>&emsp; Displays list of certifications and licenses.</td> </tr> <tr> <td>CLS</td> <td>&emsp; Clears the screen.</td> </tr> <tr> <td>CONTACT </td>  <td>&emsp; Displays a contact information.</td> </tr> <tr> <td>DATE </td>  <td>&emsp; Displays today`s date.</td> </tr> <tr> <td>DIR </td>  <td>&emsp; Displays a list of files and subdirectories in a directory.</td> </tr> <tr> <td>EDUCATION </td>  <td>&emsp; Displays educational experience.</td> </tr> <tr> <td>EXPERIENCE </td>  <td>&emsp; Displays professional experience.</td> </tr> <tr> <td>EXPERTISE</td> <td>&emsp; Displays key areas of expertise and expirience.</td> </tr> <tr> <td>HELP</td>   <td>&emsp; Provides Help information for OS commands.</td> </tr>    <tr> <td>NAME</td> <td>&emsp; Displays name. </td></tr> <tr> <td>LANGUAGES </td><td>&emsp; Displays language proficiency levels.</td></tr> <tr> <td>PRINT </td>  <td>&emsp; Prints a text.</td> </tr> <tr> <td>PROJECTS </td>  <td>&emsp; Displays noteble projects.</td> </tr> <tr> <td>PUBLICATIONS </td>  <td>&emsp; Displays list of contributions to scholarly publishings.</td> </tr> <tr> <td>SKILLS </td>  <td>&emsp; Displays some of the skills.</td> </tr> <tr> <td>SUMMARY </td>  <td>&emsp; Displays professional highlights.</td> </tr> <tr> <td>VER </td>  <td>&emsp; Displays a release version number.</td> </tr> <tr> <td>VOLUNTEER </td>  <td>&emsp; Displays volunteer experience. </td> </tr> <tr> <td> </td>  <td>&emsp; </td>   </tr  </table>',
+            contact: '<p>How to contact me => <a href="https://www.linkedin.com/in/pavelasanov/" target="_blank">LinkedIn</a></p>',
+            ver: '<p>Pavel Asanov resume version 1.1</p>',  
+            resume: '<p>Warning Spoiler Alert <a href="pavel-asanov-resume.html">Full Resume</a></p></p>',
+            dir: '<table> <tr> <td>index.html </td>  <td>&emsp; </td> </tr> <tr> <td>main.js </td>  <td>&emsp; </td> </tr> <tr> <td>stlyle.css </td>  <td>&emsp; </td> </tr> <tr> <td> </td>  <td>&emsp; </td> </tr> </table>',
+            chkdsk: '<p><b>Congratulations you disovered easter egg!</b></p> <p> Access Denied as you do not have sufficient privileges or the disk may be locked by another process. You have to invoke this utility running in elevated mode and make sure the disk is unlocked.</p>',
+        };
+        
+        var respond = myData[check]            
 
-const EVENTS = [
-  "CMOS checksum error - Defaults loaded",
-  "Floppy disk(s) fail (40)",
-  "Keyboard error or no keyboard present",
-  "<strong>Trend ChipAwayVirus(R) On Guard</strong>",
-  "CMOS battery failed",
-  "Primary IDE channel no 80 conductor cable installed",
-  "Boot Disk failure. Type key to retry",
-  "Non-System Disk or disk error<br>Replace and press any key when ready",
-  "Conflict I/O Ports: 2E8 2EB",
-  "Warning! CPU has been changed",
-  "BIOS Guardian(R) enabled. You will need to disable BIOS Guardian to update BIOS",
-  "OC fail, please enter setup to change OC Fail settings",
-  "AHCI Port0 Device Error",
-  "Press F2 to Resume"
-];
-
-const date = () => {
-  const date = new Date();
-  const zeroFill = data => String(data).padStart(2, "0");
-
-  const day = zeroFill(date.getDate());
-  const month = zeroFill(date.getMonth() + 1);
-  const year = date.getFullYear().toString().substring(2, 4);
-
-  return `${day}/${month}/${year}`;
-}
-
-class AwardBoot extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-  }
-
-  static get styles() {
-    return `
-      .screen {
-        display: block;
-        width: var(--width, 1024px);
-        height: var(--height, 768px);
-        position: relative;
-        background: #000;
-        padding: 25px;
-      }
-      .ribbon {
-        width: 48px;
-        height: 48px;
-        image-rendering: pixelated;
-      }
-      .brand-text {
-        display: flex;
-        align-items: center;
-      }
-      .epa {
-        position: absolute;
-        right: 0;
-        top: 0;
-        opacity: 1;
-        transition: opacity 1s linear;
-      }
-      .epa.fadeoff {
-        opacity: 0;
-      }
-      strong {
-        color: #fff;
-        font-weight: normal;
-      }
-      p.line {
-        margin: 0;
-      }
-      .off {
-        visibility: hidden;
-      }
-      .pre {
-        white-space: pre;
-      }
-      .last {
-        position: absolute;
-        bottom: 0;
-      }
-      .hdd {
-        margin-bottom: 50px;
-      }
-    `;
-  }
-
-  connectedCallback() {
-    this.render();
-    this.rebootSystem();
-  }
-
-  setVisible(className, duration = 0) {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        this.shadowRoot.querySelector(className).classList.remove("off");
-        resolve(true)
-      }, duration);
-    });
-  }
-
-  setHTML(className, HTML, duration = 0) {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        const div = this.shadowRoot.querySelector(className);
-        div.innerHTML = HTML;
-        resolve(true)
-      }, duration);
-    });
-  }
-
-  addHTML(className, HTML) {
-    const div = this.shadowRoot.querySelector(className);
-    div.innerHTML += HTML;
-  }
-
-  async detectDevice(place, label) {
-    const n = ~~(Math.random() * 4);
-
-    if (n === 0) {
-      const device = DEVICES[~~(Math.random() * DEVICES.length)];
-      await this.setHTML(`.hdd p:nth-child(${place})`, `Detecting IDE ${label.padEnd(16, " ")}... <span>[Press <strong>F4</strong> to skip]</span>`);
-      await this.setHTML(`.hdd p:nth-child(${place})`, `Detecting IDE ${label.padEnd(16, " ")}... <span>${device}</span>`, 4000);
+        if (check in myData) {
+            document.getElementById('response').innerHTML += `<p>C:\\>${datainput.value}</p>` + respond;
+            if (window.outerWidth && window.outerWidth > 480) {
+                window.scrollBy(0, window.innerHeight);
+            }
+            
+        } else if (check === cls) {
+            document.getElementById('response').innerHTML = `<p></p>`
+        } else if (check === date) {
+            document.getElementById('response').innerHTML += `<p>${dt}</p>`
+            window.scrollBy(0, window.innerHeight);
+        } else if (check === print) {
+            window.print()
+        } else if (datainput.value === ip || datainput.value === address) {
+            $.getJSON('https://json.geoiplookup.io/?callback=?', function(data) {
+                document.getElementById('response').innerHTML += `<p><b>Congratulations you disovered easter egg!</b></p><p>${(JSON.stringify(data, null, 2)
+                )} ,/p>`;
+                if (window.outerWidth && window.outerWidth > 480) {
+                    window.scrollBy(0, window.innerHeight);
+                }
+                
+            })
+        } else if ((datainput.value === empty)) {
+            response.innerHTML += `<p class="dark">C:\\></p>`
+            if (window.outerWidth && window.outerWidth > 480) {
+                window.scrollBy(0, window.innerHeight);
+            }
+            
+        } else {
+            response.innerHTML += `<p class="dark">C:\\>${datainput.value}</p><p>'${datainput.value}' is not recognized as an internal or external command,
+            operable program or batch file. Hint: Help.</p>`
+            if (window.outerWidth && window.outerWidth > 480) {
+                window.scrollBy(0, window.innerHeight);
+            }
+            
+        }
+            event.preventDefault()
+            event.currentTarget.value = "" /* clears input text */
     }
-    else if (n === 1) {
-      const disk = DISKS[~~(Math.random() * DISKS.length)];
-      await this.setHTML(`.hdd p:nth-child(${place})`, `Detecting IDE ${label.padEnd(16, " ")}... <span>[Press <strong>F4</strong> to skip]</span>`);
-      await this.setHTML(`.hdd p:nth-child(${place})`, `Detecting IDE ${label.padEnd(16, " ")}... <span>${disk}</span>`, 4000);
+       else if (event.keyCode === 27) {
+            event.preventDefault()
+            event.currentTarget.value = "" /* clears field text */
     }
-    else {
-      await this.setHTML(`.hdd p:nth-child(${place})`, `Detecting IDE ${label.padEnd(16, " ")}... <span>None</span>`, 50);
-    }
-  }
-
-  async detectHardDisks() {
-
-    const disk = DISKS[~~(Math.random() * DISKS.length)];
-    const size = SIZES[~~(Math.random() * SIZES.length)];
-
-    await this.setHTML(".hdd p:nth-child(1)", `Detecting IDE Primary Master  ... <span>[Press <strong>F4</strong> to skip]</span>`);
-    await this.setHTML(".hdd p:nth-child(1)", `Detecting IDE Primary Master  ... <span>${disk} ${size}</span>`, 2000);
-
-    await this.detectDevice(2, "Primary Slave");
-    await this.detectDevice(3, "Secondary Master");
-    await this.detectDevice(4, "Secondary Slave");
-  }
-
-  turnOn() {
-    return this.setHTML(".header", `
-      <img class="epa" src="./img/epa.png" alt="Energy EPA">
-      <div class="brand-text">
-        <img class="ribbon" src="./img/award-logo.png" alt="Award Logo">
-          <p>
-            Award Modular BIOS v4.50G, An Energy Star Ally<br>
-              Copyright (C) 1984-94, Award Software, Inc.
-          </p>
-        </div>
-          <p>M4NZD3V ACPI BIOS Revision 1004</p>
-          <p>
-            Intel(R) Pentium(R) PRO-MMX CPU at 133Mhz<br>
-            Memory Test:  <span class="memory">${2 ** 16}</span>
-          </p>
-      `, 2000);
-  }
-
-  enterBIOS() {
-    const monitor = document.querySelector(".monitor");
-    const bios = document.createElement("award-bios");
-    monitor.appendChild(bios);
-    this.remove();
-  }
-
-  loadurl()
-  {
-    window.location.href = "resume-os.html";
-  }
-  
-
-  async rebootSystem() {
-    const timeline = [
-      { action: () => this.turnOn() },
-      { action: () => this.checkMemory() },
-      { action: () => this.setVisible(".pnp-stage", 3000) },
-      { action: () => this.detectHardDisks() },
-      { action: () => this.createRandomEvent(2000) },
-      { action: () => this.setVisible(".last", 3500) },
-      { action: () => this.loadurl() }
-    ];
-
-
-    let i = 0;
-    while (i < timeline.length) {
-      await timeline[i].action();
-      i++;
-    }
-  }
-
-  checkMemory() {
-    return new Promise(resolve => {
-      const BLOCK = 8;
-      const memory = this.shadowRoot.querySelector(".memory");
-      const max = Number(memory.textContent);
-      memory.textContent = "";
-      for (let i = 0; i < max; i = i + BLOCK) {
-        setTimeout(() => {
-          memory.textContent = `${i}K`;
-        }, i / BLOCK);
-      }
-      setTimeout(() => this.disableEPA(), 5000);
-      setTimeout(() => {
-        memory.textContent += " OK";
-        resolve(true);
-      }, max / BLOCK);
-    });
-  }
-
-  createRandomEvent(duration = 0) {
-    const eventName = EVENTS[~~(Math.random() * EVENTS.length)];
-    this.setHTML(".event", eventName, duration);
-  }
-
-  disableEPA() {
-    this.shadowRoot.querySelector(".epa").classList.add("fadeoff");
-  }
-
-  render() {
-    this.shadowRoot.innerHTML = `
-    <style>${AwardBoot.styles}</style>
-    <div class="screen">
-      <div class="header">
-      </div>
-      <p class="pnp-stage off">
-        Award Plug and Play BIOS Extension v1.0A<br>
-        Initialize Plug and Play Cards...<br>
-        PNP Init Completed
-      </p>
-      <div class="hdd">
-        <p class="line pre"></p>
-        <p class="line pre"></p>
-        <p class="line pre"></p>
-        <p class="line pre"></p>
-      </div>
-      <div class="event"></div>
-      <p class="last off">
-        Press <strong>F1</strong> to continue, <strong>DEL</strong> to enter SETUP<br>
-        ${date()}-i440LX-<strong>TWITCH.TV/MANZDEV</strong>-00
-      </p>
-    </div>`;
-  }
-}
-
-customElements.define("award-boot", AwardBoot);
-
-class AwardBios extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-  }
-
-  static get styles() {
-    return `
-      .screen {
-        display: block;
-        width: var(--width, 1024px);
-        height: var(--height, 768px);
-        position: relative;
-        padding: 25px;
-        color: #ccc;
-        position: relative;
-        background: #000;
-      }
-      .blue {
-        background: #0000FE;
-      }
-      .center {
-        text-align: center;
-      }
-      .setup {
-        display: grid;
-        grid-template-rows: 5.8fr 1fr 1.2fr;
-        border: 3px double #fff;
-        height: 94%;
-      }
-      .main-options {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .options-1 {
-        border-right: 1px solid #fff;
-      }
-      .options {
-        padding: 35px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding-bottom: 125px;
-      }
-      .main-options span {
-        display: block;
-        white-space: pre;
-        color: #EBFE82;
-        padding: 2px 6px;
-      }
-      .main-options span.selected {
-        background: #F31A0A;
-        display: inline;
-      }
-      .shorthands {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 0.1fr);
-        align-items: center;
-        justify-items: flex-start;
-        justify-content: center;
-        align-content: center;
-        border-top: 3px double #fff;
-        padding-left: 16px;
-      }
-      .copyright {
-        border-top: 3px double #fff;
-        text-align: center;
-      }
-      .message {
-        background: #F31A0A;
-        position: absolute;
-        top: 320px;
-        left: 350px;
-        display: flex;
-        align-items: center;
-        padding: 8px 3px;
-        box-shadow: 12px 18px 0 #000a;
-      }
-      .container {
-        color: #fff;
-        border: 1px solid #fff;
-        padding: 32px;
-      }
-      strong {
-        color: #fff;
-        font-weight: normal;
-      }
-      .cursor {
-        width: 12px;
-        display: inline-block;
-        border-bottom: 2px solid #c1c1c1;
-        animation: blink 1s steps(1) infinite;
-      }
-      @keyframes blink {
-        0%, 50% { opacity: 1 }
-        50%, 100% { opacity: 0 }
-      }
-    `;
-  }
-
-/*   connectedCallback() {
-    this.render();
-    setTimeout(() => this.showExit(), 4000);
-  }
-
-  showExit() {
-    this.shadowRoot.querySelector(".screen").innerHTML += `
-    <div class="message">
-      <div class="container">SAVE to CMOS and EXIT (Y/N)?</div>
-    </div>`;
-    setTimeout(() => this.exitBIOS(), 2000);
-  }
-
-  exitBIOS() {
-    const screen = this.shadowRoot.querySelector(".screen");
-    screen.classList.remove("blue");
-    screen.innerHTML = `<p>C:\\&gt;<span class="typewriter" data-duration="2000" data-delay="0">TWITCH.EXE MANZDEV</span><span class="cursor"></span>`;
-    typewriter(screen.querySelector(".typewriter"));
-    setTimeout(() => {
-      screen.innerHTML = `
-        <p>
-          C:\\&gt;TWITCH.EXE MANZDEV<br><br>
-          Start booting <strong>Twitch.tv/ManzDev</strong>...<span class="cursor"></span>
-        </p>
-      `;
-    }, 3000);
-  } */
-  
-  render() {
-    this.shadowRoot.innerHTML = `
-    <style>${AwardBios.styles}</style>
-    <div class="blue screen">
-      <div class="title center">CMOS Setup Utility - Copyright (C) 1984-2001 Award Software</div>
-      <div class="setup">
-        <div class="main-options">
-          <div class="options options-1">
-            <span class="selected">► Standard CMOS Setup</span>
-            <span>► Advanced Setup</span>
-            <span>► Advanced Chipset Setup</span>
-            <span>► Integrated Peripherals</span>
-            <span>► Power Management Setup</span>
-            <span>► PCI/PnP Setup</span>
-            <span>► PC Health Status</span>
-          </div>
-        </div>
-      </div>
-    </div>`;
-  }
-  
-}
-
+    })
+})
 
