@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function(){
         var empty = ''
         var dt = new Date()
         var text = datainput.value
-        var check = text.toLowerCase()    
+        var checkLower = text.toLowerCase()   
+        var check = checkLower.trim()
         var myData = { 
             name: '<p>Pavel Asanov</p>', 
             expertise: '<p><b>Operations Management, Project Management, Strategic Planning, Startups</b></p>', 
