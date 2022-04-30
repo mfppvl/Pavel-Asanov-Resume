@@ -303,7 +303,7 @@ class AwardBoot extends HTMLElement {
       <div class="event"></div>
       <p class="last off">
         Press <strong>F1</strong> to continue, <strong>DEL</strong> to enter SETUP<br>
-        ${date()}-i440LX-<strong>TWITCH.TV/MANZDEV</strong>-00
+        ${date()}-i440LX-00
       </p>
     </div>`;
   }}
