@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function(){
         var respond = myData[check]            
 
         if (check in myData) {
-            document.getElementById('response').innerHTML += `<p>C:\\>${datainput.value}</p>` + respond;
+            document.getElementById('response').innerHTML += `<p>C:\\${datainput.value}</p>` + respond;
             if (window.outerWidth && window.outerWidth > 480) {
                 window.scrollBy(0, window.innerHeight);
             }
@@ -67,13 +67,13 @@ document.addEventListener('DOMContentLoaded', function(){
                 
             })
         } else if ((datainput.value === empty)) {
-            response.innerHTML += `<p class="dark">C:\\></p>`
+            response.innerHTML += `<p class="dark">C:\\</p>`
             if (window.outerWidth && window.outerWidth > 480) {
                 window.scrollBy(0, window.innerHeight);
             }
             
         } else {
-            response.innerHTML += `<p class="dark">C:\\>${datainput.value}</p><p>'${datainput.value}' is not recognized as an internal or external command,
+            response.innerHTML += `<p class="dark"> C:\\${datainput.value} </p> <p>'${datainput.value}' is not recognized as an internal or external command,
             operable program or batch file. Hint: Help.</p>`
             if (window.outerWidth && window.outerWidth > 480) {
                 window.scrollBy(0, window.innerHeight);
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function(){
     //Always blinking cursor code
     var inputField = document.getElementById("request-input");
     inputField.style.caretColor = "white"; // Set the caret color to white
-    inputField.style.caretWidth = "2px"; // Set the caret width to 2px
+    // inputField.style.caretWidth = "2px"; // Set the caret width to 2px
     inputField.style.caretHeight = "100%"; // Set the caret height to 100%
     inputField.style.caretStyle = "solid"; // Set the caret style to "solid"
     inputField.style.caretBlinkRate = "400"; // Set the caret blink rate to 400ms
