@@ -88,5 +88,21 @@ document.addEventListener('DOMContentLoaded', function(){
             event.currentTarget.value = "" /* clears field text */
     }
     })
+
+    //Always blinking cursor code
+    var inputField = document.getElementById("request-input");
+    inputField.style.caretColor = "white"; // Set the caret color to white
+    inputField.style.caretWidth = "2px"; // Set the caret width to 2px
+    inputField.style.caretHeight = "100%"; // Set the caret height to 100%
+    inputField.style.caretStyle = "solid"; // Set the caret style to "solid"
+    inputField.style.caretBlinkRate = "400"; // Set the caret blink rate to 400ms
+  
+    // Hide the caret when the input field is not focused
+    inputField.addEventListener("focus", function() {
+      inputField.style.caretColor = "white";
+    });
+    inputField.addEventListener("blur", function() {
+      inputField.style.caretColor = "transparent";
+    });
 })
 
