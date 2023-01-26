@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function(){
             chkdsk: '<p><b>Congratulations you disovered easter egg!</b></p> <p> Access Denied as you do not have sufficient privileges or the disk may be locked by another process. You have to invoke this utility running in elevated mode and make sure the disk is unlocked.</p>',
             email: '<p>pavelsnv@gmail.com</p>',
             www: '<p>http://pasanov.com</p>',
-            credits: '<p>Big thanks to <a href="https://github.com/ManzDev/twitch-manzdev-bios" target="_blank">ManzDev</a> for the development of the Award BIOS boot screen replica (It saves me a ton of time)</p>',
+            credits: '<p>Big thanks to <a href="https://github.com/ManzDev/twitch-manzdev-bios" target="_blank">ManzDev</a> for the development of the Award BIOS boot screen replica (It saved me a ton of time)</p>',
         };
         
         var respond = myData[check]            
