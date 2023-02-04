@@ -28,4 +28,4 @@ Completely FREE (no-ads) and doesn't require any unsafe permissions.
 Open-source app released under the GNU General Public License.  
 Source code available here:  https://github.com/mfppvl/Pavel-Asanov-Resume
 
-P.S. award-boot section below: Big thanks to ManzDev https://github.com/ManzDev/twitch-manzdev-bios for the development of the Award BIOS boot screen replica <award-boot></award-boot> (It saved me a lot of time)
+P.S. Big thanks to ManzDev https://github.com/ManzDev/twitch-manzdev-bios for the development of the Award BIOS boot screen replica <award-boot></award-boot> (It saved me a lot of time)
